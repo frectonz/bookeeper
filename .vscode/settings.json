@@ -1,6 +1,7 @@
 {
   "conventionalCommits.scopes": [
     "global",
-    "core"
+    "core",
+    "core-tests"
   ]
 }
