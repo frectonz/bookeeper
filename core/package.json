@@ -1,7 +1,15 @@
 {
   "name": "@bookeeper/core",
   "version": "0.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "author": "Fraol Lemecha",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "node .",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^4.1.3"
+  }
 }

@@ -1,0 +1,12 @@
+{
+  "extends": "../tsconfig.json",
+  "exclude": ["dist"],
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "rootDir": "src",
+    "outDir": "dist",
+    "declaration": true
+  }
+}
