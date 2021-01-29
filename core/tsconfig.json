@@ -1,6 +1,6 @@
 {
   "extends": "../tsconfig.json",
-  "exclude": ["dist"],
+  "exclude": ["__tests__", "dist"],
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",

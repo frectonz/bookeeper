@@ -10,6 +10,7 @@
     "core"
   ],
   "scripts": {
+    "test": "lerna run test",
     "build": "lerna run build",
     "version": "lerna version --conventional-commits --yes"
   },
