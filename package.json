@@ -1,0 +1,19 @@
+{
+  "name": "bookeeper",
+  "description": "A simple library management system",
+  "author": "Fraol Lemecha",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "app",
+    "core"
+  ],
+  "scripts": {
+    "build": "lerna run build",
+    "version": "lerna verion --conventional-commits"
+  },
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
+}
