@@ -9,11 +9,11 @@ export class Book {
   private numberOfBooks: number;
 
   constructor(options: BookOptions) {
+    this.tags = [];
     this.id = generateId();
     this.name = options.name;
     this.numberOfBorrowedBooks = 0;
     this.numberOfBooks = options.quantity;
-    this.tags = [];
     options.tags?.forEach((tagName) => this.addTag(tagName));
   }
 
