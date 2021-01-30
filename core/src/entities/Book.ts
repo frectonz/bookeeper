@@ -25,6 +25,10 @@ export class Book {
     return this.name;
   }
 
+  getQuantity() {
+    return this.numberOfBooks;
+  }
+
   addTag(tagName: string): void {
     if (this.hasTag(tagName))
       throw new Error("Can't add a tag that already exists");
@@ -60,6 +64,18 @@ export class Book {
 
   remainingBooks(): number {
     return this.numberOfBooks - this.numberOfBorrowedBooks;
+  }
+
+  returnBorrowedBook() {
+    if (this.remainingBooks() === this.numberOfBooks) {
+      throw new Error("Can't return book. There are no borrowed book.");
+    } else {
+      this.numberOfBorrowedBooks--;
+    }
+  }
+
+  changeQuantity(quantity: number) {
+    this.numberOfBooks = quantity;
   }
 }
 

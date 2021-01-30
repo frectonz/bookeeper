@@ -12,6 +12,21 @@ describe("Book - Entity", () => {
     book = new Book(bookOptions);
   });
 
+  it("has a name", () => {
+    expect(book.getName()).toBe(bookOptions.name);
+  });
+
+  describe("Book Quantity", () => {
+    it("has a quantitty", () => {
+      expect(book.getQuantity()).toBe(1);
+    });
+
+    it("is able to change quantity.", () => {
+      book.changeQuantity(4);
+      expect(book.getQuantity()).toBe(4);
+    });
+  });
+
   describe("Book Id", () => {
     it("has an id", () => {
       expect(book.getId()).toBeDefined();
@@ -29,10 +44,6 @@ describe("Book - Entity", () => {
         expect(idsThatAreEqualToCurrentId).toBe(1);
       });
     });
-  });
-
-  it("has a name", () => {
-    expect(book.getName()).toBe(bookOptions.name);
   });
 
   describe("Book Tag", () => {
@@ -57,8 +68,49 @@ describe("Book - Entity", () => {
       expect(book.hasTag("Tag")).toBeFalsy();
     });
 
-    it("doesn't remove a tag that doesn't exist", () => {
+    it("throws when trying to remove a tag that doesn't exist", () => {
       expect(() => book.removeTag("Tag")).toThrow();
+    });
+  });
+
+  describe("Book Borrow", () => {
+    beforeEach(() => {
+      book = new Book({
+        name: "book-1",
+        quantity: 2,
+      });
+    });
+
+    const borrowAllBooks = () => {
+      // call twice to borrow all books
+      book.borrow();
+      book.borrow();
+    };
+
+    it("is able to borrow book.", () => {
+      book.borrow();
+      expect(book.remainingBooks()).toBe(1);
+    });
+
+    it("checks if all books are borrowed.", () => {
+      borrowAllBooks();
+      expect(() => book.isAllBorrowed()).toBeTruthy();
+    });
+
+    it("can't borrow book if book is not available or is all borrowed.", () => {
+      borrowAllBooks();
+      expect(() => book.borrow()).toThrow();
+    });
+
+    it("is able to return a borrowed book.", () => {
+      borrowAllBooks();
+      book.returnBorrowedBook();
+      book.returnBorrowedBook();
+      expect(book.remainingBooks()).toBe(2);
+    });
+
+    it("throws an error if all the books are returned and you try to return a book.", () => {
+      expect(() => book.returnBorrowedBook()).toThrow();
     });
   });
 });

@@ -9,7 +9,7 @@
     "start": "yarn clean && yarn build && node .",
     "build": "tsc",
     "test": "jest",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist && rimraf coverage"
   },
   "devDependencies": {
     "@types/jest": "^26.0.20",
