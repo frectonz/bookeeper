@@ -12,7 +12,7 @@
   "scripts": {
     "test": "lerna run test",
     "build": "lerna run build",
-    "version": "lerna version --conventional-commits --yes"
+    "version:change": "lerna version --conventional-commits --yes"
   },
   "devDependencies": {
     "lerna": "^3.22.1"
