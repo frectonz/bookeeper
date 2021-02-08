@@ -1,5 +1,5 @@
-import { InMemoryRepo } from "../../src/repos/InMemoryRepo";
-import { Book } from "../../src/entities/Book";
+import { InMemoryRepo } from "../../../src/repos/InMemoryRepo";
+import { Book } from "../../../src/entities/Book";
 
 describe("In Memeory Repository", () => {
   let repo: InMemoryRepo<Book>;
