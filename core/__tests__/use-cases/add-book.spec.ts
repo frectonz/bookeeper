@@ -17,7 +17,7 @@ describe("Add Book Use case", () => {
     expect(repo.getById(book.getId())).toBe(book);
   });
 
-  it("doesn't allow the creation of thow books with the same name", () => {
+  test("two books can't have the same name", () => {
     addBook(sampleNewBookOptions);
     expect(() =>
       addBook({ bookName: sampleNewBookOptions.bookName, bookQuantity: 10 })
