@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/fraol0912/bookeeper/compare/v0.2.0...v0.3.0) (2021-02-09)
+
+
+### Bug Fixes
+
+* **core:** :bug: two books can't have the same name ([2f934e1](https://github.com/fraol0912/bookeeper/commit/2f934e16185aabe9507bcae66d38054a6b0bc8dc))
+
+
+### Features
+
+* **core:** :sparkles: add filter function to repo and add "add-book" use case ([6d367b9](https://github.com/fraol0912/bookeeper/commit/6d367b9a8ad108de1f80b0bb1b84eac35ab89250))
+* **core:** :sparkles: add get book use case ([1239b6d](https://github.com/fraol0912/bookeeper/commit/1239b6d310024e6c3478758e432683a1a5a2763e))
+
+
+
+
+
 # [0.2.0](https://github.com/fraol0912/bookeeper/compare/v0.1.1...v0.2.0) (2021-02-09)
 
 
