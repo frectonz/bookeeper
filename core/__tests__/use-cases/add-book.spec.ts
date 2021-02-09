@@ -2,6 +2,8 @@ import { Book } from "../../src/entities/Book";
 import { makeAddBook, NewBookOptions } from "../../src/use-cases/add-book";
 import { InMemoryRepo } from "../../src/repos/InMemoryRepo";
 
+const sampleNewBookOptions = { bookName: "book 1", bookQuantity: 10 };
+
 describe("Add Book Use case", () => {
   let repo: InMemoryRepo<Book>;
   let addBook: ({ bookName, bookQuantity, bookTags }: NewBookOptions) => Book;
@@ -11,7 +13,14 @@ describe("Add Book Use case", () => {
   });
 
   it("adds a book", () => {
-    const book = addBook({ bookName: "book 1", bookQuantity: 10 });
+    const book = addBook(sampleNewBookOptions);
     expect(repo.getById(book.getId())).toBe(book);
+  });
+
+  it("doesn't allow the creation of thow books with the same name", () => {
+    addBook(sampleNewBookOptions);
+    expect(() =>
+      addBook({ bookName: sampleNewBookOptions.bookName, bookQuantity: 10 })
+    ).toThrow();
   });
 });

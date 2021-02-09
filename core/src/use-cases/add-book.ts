@@ -7,6 +7,13 @@ export function makeAddBook(repo: Repo<Book>) {
     bookQuantity,
     bookTags,
   }: NewBookOptions) {
+    const aBookWithTheSameNameExists =
+      repo.filter((book) => book.getName() === book.getName()).length > 0;
+
+    if (aBookWithTheSameNameExists) {
+      throw new Error("Two books can't have the same name.");
+    }
+
     const book = new Book({
       name: bookName,
       quantity: bookQuantity,
