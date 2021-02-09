@@ -1,4 +1,4 @@
-import { Repo } from "../../adapters/repo";
+import { Repo } from "../adapters/repo";
 
 export class InMemoryRepo<T> implements Repo<T> {
   private storage: Map<string, T>;

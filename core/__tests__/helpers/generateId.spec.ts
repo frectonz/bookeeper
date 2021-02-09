@@ -1,7 +1,7 @@
 import { generateId } from "../../src/helpers/generateId";
 
 it("generates a new id every time its run", () => {
-  const ids = Array(100)
+  const ids: string[] = Array(100)
     .fill("")
     .map(() => generateId());
 
