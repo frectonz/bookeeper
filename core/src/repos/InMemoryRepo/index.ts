@@ -1,4 +1,6 @@
-export class InMemoryRepo<T> {
+import { Repo } from "../../adapters/repo";
+
+export class InMemoryRepo<T> implements Repo<T> {
   private storage: Map<string, T>;
 
   constructor() {
