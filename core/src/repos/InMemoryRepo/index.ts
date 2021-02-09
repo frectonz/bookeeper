@@ -18,4 +18,12 @@ export class InMemoryRepo<T> implements Repo<T> {
   getById(id: string) {
     return this.storage.get(id);
   }
+
+  filter(filterFn: (obj: T) => boolean): T[] {
+    let matchedObjs: T[] = [];
+    this.storage.forEach((obj) => {
+      if (filterFn(obj)) matchedObjs.push(obj);
+    });
+    return matchedObjs;
+  }
 }
