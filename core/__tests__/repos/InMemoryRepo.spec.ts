@@ -32,5 +32,6 @@ describe("In Memeory Repository", () => {
     const book = sampleBook();
     repo.insert(book.getId(), book);
     expect(repo.filter((b) => b.getName() === book.getName())[0]).toBe(book);
+    expect(repo.filter((b) => b.getName() === "doesn't exist").length).toBe(0);
   });
 });

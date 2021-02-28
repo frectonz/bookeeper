@@ -28,4 +28,17 @@ describe("Update Book Use case", () => {
     });
     expect(book.getName()).not.toBe(updatedBook.getName());
   });
+
+  it("throws if the book doesn't exist", () => {
+    const updateNonExistentBook = () => updateBook("non-existing id");
+    expect(updateNonExistentBook).toThrow();
+  });
+
+  it("doesn't update anything if there are no options", () => {
+    const book = addBook(sampleNewBookOptions);
+    const updatedBook = updateBook(book.getId());
+    expect(book.getName()).toBe(updatedBook.getName());
+    expect(book.getTags().length).toBe(updatedBook.getTags().length);
+    expect(book.getQuantity()).toBe(updatedBook.getQuantity());
+  });
 });

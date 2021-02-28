@@ -22,7 +22,7 @@ export class InMemoryRepo<T> implements Repo<T> {
   filter(filterFn: (obj: T) => boolean): T[] {
     let matchedObjs: T[] = [];
     this.storage.forEach((obj) => {
-      if (filterFn(obj)) matchedObjs.push(obj);
+      filterFn(obj) ? matchedObjs.push(obj) : null;
     });
     return matchedObjs;
   }
