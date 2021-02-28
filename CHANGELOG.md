@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/fraol0912/bookeeper/compare/v0.3.0...v0.4.0) (2021-02-28)
+
+
+### Features
+
+* **core:** :sparkles: update book ([da42d83](https://github.com/fraol0912/bookeeper/commit/da42d838e24e1f98275aa7fab7c8b5faeb8428c3))
+
+
+
+
+
 # [0.3.0](https://github.com/fraol0912/bookeeper/compare/v0.2.0...v0.3.0) (2021-02-09)
 
 
