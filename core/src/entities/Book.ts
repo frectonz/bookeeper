@@ -25,6 +25,10 @@ export class Book {
     return this.name;
   }
 
+  getTags() {
+    return this.tags.map((tag) => tag.name);
+  }
+
   getQuantity() {
     return this.numberOfBooks;
   }

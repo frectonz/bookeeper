@@ -71,6 +71,14 @@ describe("Book - Entity", () => {
     it("throws when trying to remove a tag that doesn't exist", () => {
       expect(() => book.removeTag("Tag")).toThrow();
     });
+
+    it("gets a list of tags of a book", () => {
+      book.addTag("Tag 1");
+      book.addTag("Tag 2");
+      const tags = book.getTags();
+      expect(tags.some((tag) => tag === "Tag 1")).toBeTruthy();
+      expect(tags.some((tag) => tag === "Tag 2")).toBeTruthy();
+    });
   });
 
   describe("Book Borrow", () => {
